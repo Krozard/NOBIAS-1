@@ -42,7 +42,7 @@ Params.K = 0.1;  % NIW(kappa,theta,delta,nu_delta); K is kappa
 Params.nu = dim+2;  % d+2
 Params.nu_delta= eye(dim); %(nu-d-1) * diag(d)
 
-Params.MotionBlur=1; %whether to do the motion blur correction, need data to have corr_obs
+Params.MotionBlur=0; %whether to do the motion blur correction, need data to have corr_obs
 Params.frametime=0.04; %s
 Params.pixelsize=0.049; %um
 Params.Plot=1;
