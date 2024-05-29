@@ -5,6 +5,8 @@ pixel_size = 49;
 raw_obs = data.obs * data.scale_factor * pixel_size ;
 raw_displacements = sqrt(raw_obs(1,:).^2 + raw_obs(2,:).^2);
 used_state = unique(out.reord_stateSeq);
+figure;
+hold on;
 jitterAmount = 0.5; % Adjust as needed
 jitter = (rand(size(out.reord_stateSeq)) - 0.5) * jitterAmount;
 
@@ -21,5 +23,5 @@ xticklabels(arrayfun(@num2str , used_state, 'UniformOutput', false));
 ylabel('Displacement, nm')
 set(gca,'yscale','log')
 ylim([10 1000])
-hold off
+
 end
