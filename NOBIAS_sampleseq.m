@@ -50,11 +50,12 @@ for ii = 1:length(data)
     
     
     stateSeq(ii).z = z;
+    for jj = 1:N_max
+        State_inds(ii).obsIndzs(jj).tot  = totSeq(jj);
+        State_inds(ii).obsIndzs(jj).inds = sparse(indSeq(:,jj)');
+    end
 end
-for jj = 1:N_max
-    State_inds(ii).obsIndzs(jj).tot  = totSeq(jj);
-    State_inds(ii).obsIndzs(jj).inds = sparse(indSeq(:,jj)');
-end
+
 
 stateCounts.N=N;
 end
